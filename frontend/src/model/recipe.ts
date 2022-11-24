@@ -1,4 +1,4 @@
-import { ingredients } from "./ingredient";
+import { Ingredient } from "./ingredient";
 
 export interface Recipe {
 
@@ -8,5 +8,5 @@ export interface Recipe {
     readonly image: string,
     readonly note: string,
     readonly preparation: string,
-    readonly ingredients: ingredients[]
+    readonly ingredients: Array<Ingredient>
 }
