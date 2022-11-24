@@ -1,6 +1,6 @@
 import { ingredients } from "./ingredient";
 
-export interface recpie {
+export interface Recipe {
 
     readonly id: number,
     readonly title: string,
