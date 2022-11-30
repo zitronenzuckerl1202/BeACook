@@ -1,6 +1,6 @@
 import { Recipe } from "./model/recipe"
 
-const RECIPE_URL = "URL HIER EINFÜGEN"
+const RECIPE_URL = "http://localhost:5000/recipes"
 
 class RecipeService{
     async fetchAll(): Promise<[Recipe]> {
