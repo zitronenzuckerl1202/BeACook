@@ -4,14 +4,14 @@ import { Recipe } from "../../model/recipe"
 import recipeService from "../../recipe-service"
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <table class="w3-table-all">
+    <table class="w3-table-all w3-monospace">
         <thead>
             <tr>
-                <th>id</th>
-                <th>title</th>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Title</th>
                 <th>Author</th>
-                <th>image</th>
-                <th>note</th>
+                <th>Note</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -19,9 +19,9 @@ const tableTemplate = html`
 `
 const rowTemplate = (recipe: Recipe) => html`
     <td>${recipe.id}</td>
+    <td><img src="${recipe.image}" alt="Image of ${recipe.title}" height="100"></td>
     <td>${recipe.title}</td>
     <td>${recipe.Author}</td>
-    <td>${recipe.image}</td>
     <td>${recipe.note}</td>
 `
 class RecipeTableComponent extends HTMLElement{
