@@ -11,13 +11,13 @@ const linkTemplate = (link: [string, string]) => html`
     <a href="${link[0]}" class="w3-bar-item w3-button w3-mobile">${link[1]}</a>
 `
 
-const navLinks: [string, string][] = [["index.ts", "home"], ["", "recipe list"], ["", "contact"]]
+const navLinks: [string, string][] = [["", "home"], ["recipies", "recipe list"], ["contact", "contact"]]
 
 const lTemp = html`
 <a href="Test" class="w3-bar-item w3-button w3-mobile w3-monospace">Test</a>
 `
 
-class NavBarComponent extends HTMLElement{
+class NavBarComponent extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({mode: "open"})

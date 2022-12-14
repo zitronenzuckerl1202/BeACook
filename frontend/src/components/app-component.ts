@@ -3,8 +3,9 @@ import "./recipe"
 import { RECIPE_SELECTED_EVENT } from "./recipe"
 
 const template = html`
-    <recipe-table><recipe-table>
-    <recipe-component><recipe-component>
+    <navbar-component></navbar-component>
+    <recipe-table></recipe-table>
+    <recipe-component></recipe-component>
 `
 class AppComponent extends HTMLElement {
     constructor(){
