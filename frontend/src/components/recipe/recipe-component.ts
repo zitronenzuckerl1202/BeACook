@@ -1,6 +1,7 @@
 import {html, render} from "lit-html"
 import { Recipe } from "../../model/recipe"
 import { Ingredient } from "../../model/ingredient"
+import { RECIPE_SELECTED_EVENT } from "."
 
 
 const tableTemplate = html`
@@ -23,19 +24,31 @@ const rowTemplate = (ingredient: Ingredient) => html`
 `
 
 class RecipeComponent extends HTMLElement{
+    private ingredients: [Ingredient]
 
     constructor() {
         super()
         this.attachShadow({mode: "open"})
     }
-    connectedCallback() {
+    async connectedCallback() {
         
-        console.log("detail-view for recipe")
+        console.log("Detail View Component connected")
+        // selected recipe = null
+        //const recipe = this.querySelector("selected-recipe")
 
+        const recipe = JSON.parse(localStorage.getItem("recipe"))
+        console.log("selected recipe:", recipe)
+        console.log("ingredients: ", recipe.ingredients)
+
+        this.ingredients = recipe.ingredients
+        this.render(recipe.ingredients)
 
     }
-    private render(ingredients: Array<Ingredient>) {
+    public render(ingredients: Array<Ingredient>) {
         
+        console.log("render Details")
+        console.log("table ingredients:" + this.ingredients)
+
         render(tableTemplate, this.shadowRoot)
 
         const tbody = this.shadowRoot.querySelector("tbody")

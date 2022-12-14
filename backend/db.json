@@ -6,7 +6,75 @@
       "Author": "Markus Luftensteiner",
       "image": "http://images.sweetauthoring.com/recipe/9161_2093.jpg",
       "note": "Diese Torte muss man mal probiert haben! Falls nicht vegan kann man statt den Keksen Brioche nehmen, statt der Joghurt-/Frischkäsealternative den Philadelphia-Käse und statt der Milchalternative Kuhmilch, je nach Belieben halt.",
-      "preparation": "Boden\nDen Boden einer 22cm Backform mit Alufolie bedecken\nHafer-/Kokoskekse in einem Gefrierbeutel fein zerbröseln- geht leicht mit einer Glasflasche als Nudelholzersatz\nFett schmelzen und mit den Keksbröseln vermengen - in die Backform drücken und ca. 30min kühl stellen\nBeerenschicht\nBeeren putzen und auf dem Boden verteilen\nWasser, Agar Agar & Zucker aufkochen.\nEtwas abkühlen lassen und löffelweise über die Beeren geben. ca. 15 Minuten fest werden lassen.\nCremeschicht\nDie Milchalternativen mit dem Zitronensaft vermengen. Bei Bedarf etwas süßen. (Meist nicht nötig, da der Keksboden süß genug ist)\nAgar Agar nach Packungsanleitung in Wasser aufkochen\nDie Joghurtmasse langsam hinzugießen und alles miteinander vermengen.\nAuf die Beeren geben, glattstreichen und für mindestens 3 Stunden im Kühlschrank kaltstellen.\n"
+      "preparation": "Boden\nDen Boden einer 22cm Backform mit Alufolie bedecken\nHafer-/Kokoskekse in einem Gefrierbeutel fein zerbröseln- geht leicht mit einer Glasflasche als Nudelholzersatz\nFett schmelzen und mit den Keksbröseln vermengen - in die Backform drücken und ca. 30min kühl stellen\nBeerenschicht\nBeeren putzen und auf dem Boden verteilen\nWasser, Agar Agar & Zucker aufkochen.\nEtwas abkühlen lassen und löffelweise über die Beeren geben. ca. 15 Minuten fest werden lassen.\nCremeschicht\nDie Milchalternativen mit dem Zitronensaft vermengen. Bei Bedarf etwas süßen. (Meist nicht nötig, da der Keksboden süß genug ist)\nAgar Agar nach Packungsanleitung in Wasser aufkochen\nDie Joghurtmasse langsam hinzugießen und alles miteinander vermengen.\nAuf die Beeren geben, glattstreichen und für mindestens 3 Stunden im Kühlschrank kaltstellen.\n",
+      "ingredients": [
+        {
+          "id": 1,
+          "amount": 150,
+          "unit": "g",
+          "name": "Kekse (vegan z.B. Hafercookie / Kokoskekse)"
+        },
+        {
+          "id": 2,
+          "amount": 60,
+          "unit": "g",
+          "name": "Margarine (oder Kokosfett)"
+        },
+        {
+          "id": 3,
+          "amount": 200,
+          "unit": "g",
+          "name": "Beeren"
+        },
+        {
+          "id": 4,
+          "amount": 200,
+          "unit": "ml",
+          "name": "Wasser"
+        },
+        {
+          "id": 5,
+          "amount": 0.5,
+          "unit": "TL",
+          "name": "Agar"
+        },
+        {
+          "id": 6,
+          "amount": 20,
+          "unit": "g",
+          "name": "Zucker"
+        },
+        {
+          "id": 7,
+          "amount": 400,
+          "unit": "g",
+          "name": "Joghurt-/Frischkäsealternative (auch Quark-/Sahnealternativen sind möglich - je nach Geschmack)"
+        },
+        {
+          "id": 8,
+          "amount": 0.5,
+          "unit": "Stk.",
+          "name": "Zitrone (Saft)"
+        },
+        {
+          "id": 9,
+          "amount": 100,
+          "unit": "ml",
+          "name": "Wasser"
+        },
+        {
+          "id": 10,
+          "amount": 1,
+          "unit": "TL",
+          "name": "Agar Agar (Gelatineersatz)"
+        },
+        {
+          "id": 11,
+          "amount": 1,
+          "unit": "TL",
+          "name": "Zucker (bei Bedarf"
+        }
+      ]
     },
     {
       "id": 2,
@@ -14,7 +82,63 @@
       "Author": "Sabrina Froschauer",
       "image": "https://www.gusto.at/_storage/asset/8618486/storage/womanat:slideshow-large/file/128041073/63463849.jpg",
       "note": "Oida, man bracht anfoch Punschkrapferl!",
-      "preparation": "Dotter + ½ Zucker schlagen dann H2O dazu und weiter schlagen. Schnee mit ½ Zucker aufschlagen. Schnee, Mehl und Maizena unter die Dottermasse heben und bei 210°C 9 – 10 min backen.\nKreise ausstechen, Reste mit Orangensaft, geriebenen Schokolade, Ribiselmarmelade und Rum zu einer Masse machen. Kreise mit der Masse zusammensetzen dann noch eine rosa Glasur machen (Ribiselsaft oder etwas anderes rosares)"
+      "preparation": "Dotter + ½ Zucker schlagen dann H2O dazu und weiter schlagen. Schnee mit ½ Zucker aufschlagen. Schnee, Mehl und Maizena unter die Dottermasse heben und bei 210°C 9 – 10 min backen.\nKreise ausstechen, Reste mit Orangensaft, geriebenen Schokolade, Ribiselmarmelade und Rum zu einer Masse machen. Kreise mit der Masse zusammensetzen dann noch eine rosa Glasur machen (Ribiselsaft oder etwas anderes rosares)",
+      "ingredients": [
+        {
+          "id": 12,
+          "amount": 3,
+          "unit": "Stk.",
+          "name": "Dotter"
+        },
+        {
+          "id": 13,
+          "amount": 6,
+          "unit": "EL",
+          "name": "heißes Wasser"
+        },
+        {
+          "id": 14,
+          "amount": 15,
+          "unit": "",
+          "name": "Zucker"
+        },
+        {
+          "id": 15,
+          "amount": 10,
+          "unit": "",
+          "name": "Mehl"
+        },
+        {
+          "id": 16,
+          "amount": 5,
+          "unit": "",
+          "name": "Maizena Van., Backp."
+        },
+        {
+          "id": 17,
+          "amount": 1,
+          "unit": "",
+          "name": "Ribiselmamelade"
+        },
+        {
+          "id": 18,
+          "amount": 1,
+          "unit": "",
+          "name": "Orangensaft"
+        },
+        {
+          "id": 19,
+          "amount": 1,
+          "unit": "",
+          "name": "geriebene Schockolade"
+        },
+        {
+          "id": 20,
+          "amount": 1,
+          "unit": "",
+          "name": "Rosa Glasur"
+        }
+      ]
     },
     {
       "id": 4,
@@ -22,157 +146,17 @@
       "Author": "Katharina Praher",
       "image": "https://garrysgrill.com/wp-content/uploads/2018/03/feature-cake-.png",
       "note": "Simple Cake",
-      "preparation": "1. Plan 2. Implement 3. Test 4. Deploy\n sth wos changed"
+      "preparation": "1. Plan 2. Implement 3. Test 4. Deploy\n sth wos changed",
+      "ingredients": []
     },
     {
+      "id": 5,
       "title": "Testbread",
       "Author": "Katharina Praher",
       "image": "https://www.bakels.com.au/wp-content/uploads/sites/21/2019/05/Premium-Light-Rye-Bread-1.jpg",
       "note": "Simple Cake",
       "preparation": "1. Plan 2. Implement 3. Test 4. Deploy\n sth wos changed",
-      "id": 5
-    }
-  ],
-  "ingredients": [
-    {
-      "id": 1,
-      "amount": 150,
-      "unit": "g",
-      "name": "Kekse (vegan z.B. Hafercookie / Kokoskekse)",
-      "recipeId": 1
-    },
-    {
-      "id": 2,
-      "amount": 60,
-      "unit": "g",
-      "name": "Margarine (oder Kokosfett)",
-      "recipeId": 1
-    },
-    {
-      "id": 3,
-      "amount": 200,
-      "unit": "g",
-      "name": "Beeren",
-      "recipeId": 1
-    },
-    {
-      "id": 4,
-      "amount": 200,
-      "unit": "ml",
-      "name": "Wasser",
-      "recipeId": 1
-    },
-    {
-      "id": 5,
-      "amount": 0.5,
-      "unit": "TL",
-      "name": "Agar",
-      "recipeId": 1
-    },
-    {
-      "id": 6,
-      "amount": 20,
-      "unit": "g",
-      "name": "Zucker",
-      "recipeId": 1
-    },
-    {
-      "id": 7,
-      "amount": 400,
-      "unit": "g",
-      "name": "Joghurt-/Frischkäsealternative (auch Quark-/Sahnealternativen sind möglich - je nach Geschmack)",
-      "recipeId": 1
-    },
-    {
-      "id": 8,
-      "amount": 0.5,
-      "unit": "Stk.",
-      "name": "Zitrone (Saft)",
-      "recipeId": 1
-    },
-    {
-      "id": 9,
-      "amount": 100,
-      "unit": "ml",
-      "name": "Wasser",
-      "recipeId": 1
-    },
-    {
-      "id": 10,
-      "amount": 1,
-      "unit": "TL",
-      "name": "Agar Agar (Gelatineersatz)",
-      "recipeId": 1
-    },
-    {
-      "id": 11,
-      "amount": 1,
-      "unit": "TL",
-      "name": "Zucker (bei Bedarf",
-      "recipeId": 1
-    },
-    {
-      "id": 12,
-      "amount": 3,
-      "unit": "Stk.",
-      "name": "Dotter",
-      "recipeId": 2
-    },
-    {
-      "id": 13,
-      "amount": 6,
-      "unit": "EL",
-      "name": "heißes Wasser",
-      "recipeId": 2
-    },
-    {
-      "id": 14,
-      "amount": 15,
-      "unit": "",
-      "name": "Zucker",
-      "recipeId": 2
-    },
-    {
-      "id": 15,
-      "amount": 10,
-      "unit": "",
-      "name": "Mehl",
-      "recipeId": 2
-    },
-    {
-      "id": 16,
-      "amount": 5,
-      "unit": "",
-      "name": "Maizena Van., Backp.",
-      "recipeId": 2
-    },
-    {
-      "id": 17,
-      "amount": 1,
-      "unit": "",
-      "name": "Ribiselmamelade",
-      "recipeId": 2
-    },
-    {
-      "id": 18,
-      "amount": 1,
-      "unit": "",
-      "name": "Orangensaft",
-      "recipeId": 2
-    },
-    {
-      "id": 19,
-      "amount": 1,
-      "unit": "",
-      "name": "geriebene Schockolade",
-      "recipeId": 2
-    },
-    {
-      "id": 20,
-      "amount": 1,
-      "unit": "",
-      "name": "Rosa Glasur",
-      "recipeId": 2
+      "ingredients": []
     }
   ]
 }
