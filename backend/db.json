@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Vegane Philadelphia-Torte",
       "Author": "Markus Luftensteiner",
-      "image": "",
+      "image": "http://images.sweetauthoring.com/recipe/9161_2093.jpg",
       "note": "Diese Torte muss man mal probiert haben! Falls nicht vegan kann man statt den Keksen Brioche nehmen, statt der Joghurt-/Frischkäsealternative den Philadelphia-Käse und statt der Milchalternative Kuhmilch, je nach Belieben halt.",
       "preparation": "Boden\nDen Boden einer 22cm Backform mit Alufolie bedecken\nHafer-/Kokoskekse in einem Gefrierbeutel fein zerbröseln- geht leicht mit einer Glasflasche als Nudelholzersatz\nFett schmelzen und mit den Keksbröseln vermengen - in die Backform drücken und ca. 30min kühl stellen\nBeerenschicht\nBeeren putzen und auf dem Boden verteilen\nWasser, Agar Agar & Zucker aufkochen.\nEtwas abkühlen lassen und löffelweise über die Beeren geben. ca. 15 Minuten fest werden lassen.\nCremeschicht\nDie Milchalternativen mit dem Zitronensaft vermengen. Bei Bedarf etwas süßen. (Meist nicht nötig, da der Keksboden süß genug ist)\nAgar Agar nach Packungsanleitung in Wasser aufkochen\nDie Joghurtmasse langsam hinzugießen und alles miteinander vermengen.\nAuf die Beeren geben, glattstreichen und für mindestens 3 Stunden im Kühlschrank kaltstellen.\n"
     },
@@ -12,25 +12,22 @@
       "id": 2,
       "title": "Punschkrapferl",
       "Author": "Sabrina Froschauer",
-      "image": "",
+      "image": "https://www.gusto.at/_storage/asset/8618486/storage/womanat:slideshow-large/file/128041073/63463849.jpg",
       "note": "Oida, man bracht anfoch Punschkrapferl!",
       "preparation": "Dotter + ½ Zucker schlagen dann H2O dazu und weiter schlagen. Schnee mit ½ Zucker aufschlagen. Schnee, Mehl und Maizena unter die Dottermasse heben und bei 210°C 9 – 10 min backen.\nKreise ausstechen, Reste mit Orangensaft, geriebenen Schokolade, Ribiselmarmelade und Rum zu einer Masse machen. Kreise mit der Masse zusammensetzen dann noch eine rosa Glasur machen (Ribiselsaft oder etwas anderes rosares)"
-    },
-    {
-      "id": 3
     },
     {
       "id": 4,
       "title": "Testcake",
       "Author": "Katharina Praher",
-      "image": "",
+      "image": "https://garrysgrill.com/wp-content/uploads/2018/03/feature-cake-.png",
       "note": "Simple Cake",
       "preparation": "1. Plan 2. Implement 3. Test 4. Deploy\n sth wos changed"
     },
     {
-      "title": "Testcake 2",
+      "title": "Testbread",
       "Author": "Katharina Praher",
-      "image": "",
+      "image": "https://www.bakels.com.au/wp-content/uploads/sites/21/2019/05/Premium-Light-Rye-Bread-1.jpg",
       "note": "Simple Cake",
       "preparation": "1. Plan 2. Implement 3. Test 4. Deploy\n sth wos changed",
       "id": 5
