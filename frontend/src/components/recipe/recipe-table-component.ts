@@ -62,4 +62,4 @@ class RecipeTableComponent extends HTMLElement{
         });
     }
 }
-customElements.define("recipe-table",RecipeTableComponent)
+customElements.define("recipe-table",RecipeTableComponent) 
