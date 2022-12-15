@@ -1,11 +1,12 @@
 import {html, render} from "lit-html"
 import { Recipe } from "../../model/recipe"
 import { Ingredient } from "../../model/ingredient"
-import { RECIPE_SELECTED_EVENT } from "."
+import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "."
 
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <h4>Ingredient List</h4>
     <table class="w3-table-all">
         <thead>
             <tr>
@@ -16,6 +17,9 @@ const tableTemplate = html`
         </thead>
         <tbody></tbody>
     </table>
+
+    <button onclick="goToOverview()" type="button">Back to Overview</button>
+        
 `
 const rowTemplate = (ingredient: Ingredient) => html`
     <td>${ingredient.amount}</td>
@@ -58,6 +62,12 @@ class RecipeComponent extends HTMLElement{
             render(rowTemplate(ingredient), row)
         });
     }
+}
+
+function goToOverview(){
+
+    const event = new CustomEvent(OVERVIEW_SELECTED)
+    this.dispatchEvent(event)
 }
 
 customElements.define("recipe-component", RecipeComponent)

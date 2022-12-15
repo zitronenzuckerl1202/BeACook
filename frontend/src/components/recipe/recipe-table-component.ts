@@ -8,6 +8,7 @@ import { distinctUntilChanged, map } from "rxjs"
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <h3>Recipe Table<h3>
     <table class="w3-table-all w3-monospace">
         <thead>
             <tr>

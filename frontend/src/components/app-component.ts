@@ -1,6 +1,6 @@
 import { html, render } from "lit-html"
 import "./recipe"
-import { RECIPE_SELECTED_EVENT } from "./recipe"
+import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "./recipe"
 
 const template = html`
     <recipe-table></recipe-table>
@@ -36,6 +36,11 @@ class AppComponent extends HTMLElement {
         })
 
 
+        recipeComponent.addEventListener(OVERVIEW_SELECTED, (r: CustomEvent) =>{
+
+            recipeComponent.style.display = "none"
+            recipeTableComponent.style.display = "block"
+        })
     }
 }
 customElements.define("app-component", AppComponent)
