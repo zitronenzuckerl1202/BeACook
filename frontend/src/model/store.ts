@@ -7,9 +7,8 @@ interface Model {
 }
 
 const initialState: Model = {
-
     recipes: new Array<Recipe>
 }
 
-const storage = new BehaviorSubject<Model>(initialState)
-export default storage
+const store = new BehaviorSubject<Model>(initialState)
+export default store
