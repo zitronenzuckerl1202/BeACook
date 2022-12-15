@@ -2,6 +2,10 @@ import {html, render} from "lit-html"
 import { RECIPE_SELECTED_EVENT } from "."
 import { Recipe } from "../../model/recipe"
 import recipeService from "../../recipe-service"
+import store from "../../model/store"
+import { distinctUntilChanged, map } from "rxjs"
+
+
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <h3>Recipe Table<h3>
@@ -34,10 +38,18 @@ class RecipeTableComponent extends HTMLElement{
     }
     async connectedCallback(){
         console.log("Recipe Table Component connected")
-        this.recipes = await this.load()
-        this.render(this.recipes)
+        recipeService.fetchAll()
+        store
+            .pipe(
+                map(model => model.recipes),
+                distinctUntilChanged()
+            )
+            .subscribe(recipes => {
+                this.render(recipes)
+            })
     }
-    private render(recipes: [Recipe]){
+    
+    private render(recipes: Array<Recipe>){
         render(tableTemplate, this.shadowRoot)
 
         const tbody = this.shadowRoot.querySelector("tbody")
@@ -49,10 +61,6 @@ class RecipeTableComponent extends HTMLElement{
             }
             render(rowTemplate(recipe),row)
         });
-    }
-    private async load(): Promise<[Recipe]>{
-        const recipes = await recipeService.fetchAll()
-        return recipes
     }
 }
 customElements.define("recipe-table",RecipeTableComponent)
