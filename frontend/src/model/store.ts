@@ -4,6 +4,7 @@ import { Ingredient } from "./ingredient"
 
 interface Model {
     readonly recipes: Array<Recipe>
+    readonly currentrecipeid?: number
 }
 
 const initialState: Model = {

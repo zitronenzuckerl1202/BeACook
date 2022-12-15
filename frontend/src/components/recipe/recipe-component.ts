@@ -2,6 +2,7 @@ import {html, render} from "lit-html"
 import { Recipe } from "../../model/recipe"
 import { Ingredient } from "../../model/ingredient"
 import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "."
+import store from "../../model/store"
 
 
 const tableTemplate = html`
@@ -18,7 +19,7 @@ const tableTemplate = html`
         <tbody></tbody>
     </table>
 
-    <button onclick="goToOverview()" type="button">Back to Overview</button>
+    <button type="button">Back to Overview</button>
         
 `
 const rowTemplate = (ingredient: Ingredient) => html`
@@ -28,46 +29,51 @@ const rowTemplate = (ingredient: Ingredient) => html`
 `
 
 class RecipeComponent extends HTMLElement{
-    private ingredients: [Ingredient]
+    private ingredients: Ingredient[]
 
     constructor() {
         super()
         this.attachShadow({mode: "open"})
     }
     async connectedCallback() {
-        
-        console.log("Detail View Component connected")
-        // selected recipe = null
-        //const recipe = this.querySelector("selected-recipe")
 
-        const recipe = JSON.parse(localStorage.getItem("recipe"))
-        console.log("selected recipe:", recipe)
-        console.log("ingredients: ", recipe.ingredients)
+        store
+            .subscribe(model => {
 
-        this.ingredients = recipe.ingredients
-        this.render(recipe.ingredients)
+                const currentrecipe = model.recipes.find(recipe => recipe.id == model.currentrecipeid)
+
+                if(currentrecipe){
+
+                    this.render(currentrecipe.ingredients)
+                    this.style.display = "block"
+                }
+                else{
+
+                    this.style.display = "none"
+                }
+            })
 
     }
     public render(ingredients: Array<Ingredient>) {
-        
-        console.log("render Details")
-        console.log("table ingredients:" + this.ingredients)
 
         render(tableTemplate, this.shadowRoot)
 
         const tbody = this.shadowRoot.querySelector("tbody")
+        while(tbody.firstChild){
+            tbody.firstChild.remove()
+        }
         ingredients.forEach(ingredient =>{
 
             const row = tbody.insertRow()
             render(rowTemplate(ingredient), row)
         });
+
+        const btn = this.shadowRoot.querySelector("button")
+        btn.onclick = () => {
+            const event = new CustomEvent(OVERVIEW_SELECTED)
+            this.dispatchEvent(event)
+        }
     }
-}
-
-function goToOverview(){
-
-    const event = new CustomEvent(OVERVIEW_SELECTED)
-    this.dispatchEvent(event)
 }
 
 customElements.define("recipe-component", RecipeComponent)
