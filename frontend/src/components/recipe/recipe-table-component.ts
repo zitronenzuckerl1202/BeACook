@@ -36,7 +36,7 @@ class RecipeTableComponent extends HTMLElement{
         super()
         this.attachShadow({mode:"open"})
     }
-    async connectedCallback(){
+    connectedCallback(){
         console.log("Recipe Table Component connected")
         recipeService.fetchAll()
         store
