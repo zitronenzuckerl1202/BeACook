@@ -11,10 +11,10 @@ const linkTemplate = (link: [string, string]) => html`
     <a href="${link[0]}" class="w3-bar-item w3-button w3-mobile">${link[1]}</a>
 `
 
-const navLinks: [string, string][] = [["", "home"], ["recipies", "recipe list"], ["contact", "contact"]]
+const navLinks: [string, string][] = [["/", "home"], ["/recipies", "recipe list"], ["/contact", "contact"]]
 
 const lTemp = html`
-<a href="Test" class="w3-bar-item w3-button w3-mobile w3-monospace">Test</a>
+<a href="Test" class="w3-bar-item w3-button w3-mobile w3-monospace" data-navigo>Test</a>
 `
 
 class NavBarComponent extends HTMLElement {
@@ -39,7 +39,6 @@ class NavBarComponent extends HTMLElement {
         const child: DocumentFragment = navbar.appendChild(new DocumentFragment())
 
         render(lTemp, child)
-
     }
 }
 
