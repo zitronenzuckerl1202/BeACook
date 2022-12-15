@@ -19,11 +19,21 @@ class AppComponent extends HTMLElement {
         render(template,this.shadowRoot)
         const recipeTableComponent: HTMLElement = this.shadowRoot.querySelector("recipe-table")
         const recipeComponent: HTMLElement = this.shadowRoot.querySelector("recipe-component")
+        recipeComponent.style.display = "none"
+
         recipeTableComponent.addEventListener(RECIPE_SELECTED_EVENT, (r: CustomEvent) => {
+            
             const recipe = r.detail.recipe
-            recipeComponent.setAttribute("selected-recipe", recipe.id)
+            localStorage.setItem("recipe", JSON.stringify(recipe));
+            // TODO render!!
+
+            //recipeComponent.setAttribute("selected-recipe", recipe.id)
             recipeComponent.style.display = "block"
             recipeTableComponent.style.display = "none"
+            //console.log("App-Component:", recipe)
+
+            //console.log("String: " + JSON.stringify(recipe))
+            
         })
 
 
