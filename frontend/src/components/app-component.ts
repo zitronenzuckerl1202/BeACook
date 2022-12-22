@@ -1,6 +1,8 @@
 import { html, render } from "lit-html"
+import store from "../model/store"
 import "./recipe"
-import { RECIPE_SELECTED_EVENT } from "./recipe"
+import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "./recipe"
+import produce from "immer"
 
 const template = html`
     <navbar-component></navbar-component>
@@ -23,20 +25,24 @@ class AppComponent extends HTMLElement {
 
         recipeTableComponent.addEventListener(RECIPE_SELECTED_EVENT, (r: CustomEvent) => {
             
-            const recipe = r.detail.recipe
-            localStorage.setItem("recipe", JSON.stringify(recipe));
-            // TODO render!!
+            const selectedrecipeid = r.detail.recipe.id
 
-            //recipeComponent.setAttribute("selected-recipe", recipe.id)
-            recipeComponent.style.display = "block"
-            recipeTableComponent.style.display = "none"
-            //console.log("App-Component:", recipe)
+            console.log("current recipe id: " + selectedrecipeid)
 
-            //console.log("String: " + JSON.stringify(recipe))
-            
+            let nextState = produce(store.getValue(), draft => {
+                draft.currentrecipeid = selectedrecipeid
+            })
+            store.next(nextState)
+
+            recipeTableComponent.style.display = "none"            
         })
 
 
+        recipeComponent.addEventListener(OVERVIEW_SELECTED, (r: CustomEvent) =>{
+
+            recipeComponent.style.display = "none"
+            recipeTableComponent.style.display = "block"
+        })
     }
 }
 customElements.define("app-component", AppComponent)

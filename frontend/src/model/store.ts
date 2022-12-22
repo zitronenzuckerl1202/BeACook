@@ -4,12 +4,12 @@ import { Ingredient } from "./ingredient"
 
 interface Model {
     readonly recipes: Array<Recipe>
+    readonly currentrecipeid?: number
 }
 
 const initialState: Model = {
-
     recipes: new Array<Recipe>
 }
 
-const storage = new BehaviorSubject<Model>(initialState)
-export default storage
+const store = new BehaviorSubject<Model>(initialState)
+export default store
