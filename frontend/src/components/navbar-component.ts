@@ -29,7 +29,6 @@ class NavBarComponent extends HTMLElement {
     private render() {
         render(template, this.shadowRoot)
         const navbar = this.shadowRoot.getElementById("navbar")
-
         navLinks.forEach(link => {
             var frag: DocumentFragment = new DocumentFragment
             render(linkTemplate(link), frag)

@@ -1,14 +1,16 @@
 import { html, render } from "lit-html"
 import Navigo from "navigo"
 import "./recipe"
+import "./contact-component"
+import "./navbar-component"
 import { RECIPE_SELECTED_EVENT } from "./recipe"
 
 const template = html`
     <navbar-component></navbar-component>
     <recipe-table></recipe-table>
     <recipe-component></recipe-component>
-    <home-component></home-component>
     <contact-component></contact-component>
+    <home-component></home-component>
 `
 class AppComponent extends HTMLElement {
     constructor(){
@@ -24,9 +26,14 @@ class AppComponent extends HTMLElement {
         render(template,this.shadowRoot)
         const recipeTableComponent: HTMLElement = this.shadowRoot.querySelector("recipe-table")
         const recipeComponent: HTMLElement = this.shadowRoot.querySelector("recipe-component")
+        const homeComponent: HTMLElement = this.shadowRoot.querySelector("home-component")
+        const contactComponent: HTMLElement = this.shadowRoot.querySelector("contact-component")
         
         recipeTableComponent.style.display = "none"
         recipeComponent.style.display = "none"
+        homeComponent.style.display = "none"
+        contactComponent.style.display = "none"
+
 
         /*recipeTableComponent.addEventListener(RECIPE_SELECTED_EVENT, (r: CustomEvent) => {
             
@@ -50,6 +57,7 @@ class AppComponent extends HTMLElement {
     
             router
                 .on("", () => {
+                  homeComponent.style.display = "block"
                 //render("home");
               })
               .on("/recipies", () => {
@@ -63,6 +71,7 @@ class AppComponent extends HTMLElement {
                 //render("Products " + JSON.stringify(match.params));
               })
               .on("/contact", () => {
+                contactComponent.style.display = "block"
                 //render("Login");
               })
               .resolve();

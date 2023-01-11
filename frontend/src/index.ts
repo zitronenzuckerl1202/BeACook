@@ -1,5 +1,4 @@
 import "./components/app-component"
-import "./components/navbar-component"
 
 const title = document.querySelector("title")
 title.textContent = "Recipe Table"
