@@ -1,11 +1,13 @@
 import {html, render} from "lit-html"
 import { Recipe } from "../../model/recipe"
 import { Ingredient } from "../../model/ingredient"
-import { RECIPE_SELECTED_EVENT } from "."
+import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "."
+import store from "../../model/store"
 
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <h4>Ingredient List</h4>
     <table class="w3-table-all">
         <thead>
             <tr>
@@ -16,6 +18,9 @@ const tableTemplate = html`
         </thead>
         <tbody></tbody>
     </table>
+
+    <button type="button">Back to Overview</button>
+        
 `
 const rowTemplate = (ingredient: Ingredient) => html`
     <td>${ingredient.amount}</td>
@@ -24,39 +29,50 @@ const rowTemplate = (ingredient: Ingredient) => html`
 `
 
 class RecipeComponent extends HTMLElement{
-    private ingredients: [Ingredient]
+    private ingredients: Ingredient[]
 
     constructor() {
         super()
         this.attachShadow({mode: "open"})
     }
     async connectedCallback() {
-        
-        console.log("Detail View Component connected")
-        // selected recipe = null
-        //const recipe = this.querySelector("selected-recipe")
 
-        const recipe = JSON.parse(localStorage.getItem("recipe"))
-        console.log("selected recipe:", recipe)
-        console.log("ingredients: ", recipe.ingredients)
+        store
+            .subscribe(model => {
 
-        this.ingredients = recipe.ingredients
-        this.render(recipe.ingredients)
+                const currentrecipe = model.recipes.find(recipe => recipe.id == model.currentrecipeid)
+
+                if(currentrecipe){
+
+                    this.render(currentrecipe.ingredients)
+                    this.style.display = "block"
+                }
+                else{
+
+                    this.style.display = "none"
+                }
+            })
 
     }
     public render(ingredients: Array<Ingredient>) {
-        
-        console.log("render Details")
-        console.log("table ingredients:" + this.ingredients)
 
         render(tableTemplate, this.shadowRoot)
 
         const tbody = this.shadowRoot.querySelector("tbody")
+        while(tbody.firstChild){
+            tbody.firstChild.remove()
+        }
         ingredients.forEach(ingredient =>{
 
             const row = tbody.insertRow()
             render(rowTemplate(ingredient), row)
         });
+
+        const btn = this.shadowRoot.querySelector("button")
+        btn.onclick = () => {
+            const event = new CustomEvent(OVERVIEW_SELECTED)
+            this.dispatchEvent(event)
+        }
     }
 }
 
