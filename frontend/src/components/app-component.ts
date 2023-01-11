@@ -30,15 +30,8 @@ class AppComponent extends HTMLElement {
         const recipeComponent: HTMLElement = this.shadowRoot.querySelector("recipe-component")
         const homeComponent: HTMLElement = this.shadowRoot.querySelector("home-component")
         const contactComponent: HTMLElement = this.shadowRoot.querySelector("contact-component")
-        
-        recipeTableComponent.style.display = "none"
-        recipeComponent.style.display = "none"
-        homeComponent.style.display = "none"
-        contactComponent.style.display = "none"
-
 
         recipeTableComponent.addEventListener(RECIPE_SELECTED_EVENT, (r: CustomEvent) => {
-            
             const selectedrecipeid = r.detail.recipe.id
 
             console.log("current recipe id: " + selectedrecipeid)
@@ -53,40 +46,50 @@ class AppComponent extends HTMLElement {
 
 
         recipeComponent.addEventListener(OVERVIEW_SELECTED, (r: CustomEvent) =>{
-
             recipeComponent.style.display = "none"
             recipeTableComponent.style.display = "block"
             //console.log("String: " + JSON.stringify(recipe))
             
         })
-
+        
         window.addEventListener("load", () => {
-            const router = new Navigo("/", { hash: true });
-            //const render = (content) =>
-             // (document.querySelector("#content").innerHTML = content);
-    
-            router
-                .on("", () => {
-                  homeComponent.style.display = "block"
-                //render("home");
-              })
-              .on("/recipies", () => {
-                recipeTableComponent.style.display = "block"
-                //render("Products " + JSON.stringify(match.params));
-              })
-              .on("/recipies/:id", (match) => {
-                console.log(match.data.id);
-                recipeComponent.style.display = "block"
+          const router = new Navigo("/", { hash: true });      
+          router
+              .on("/", () => {
+                homeComponent.style.display = "block"
 
-                //render("Products " + JSON.stringify(match.params));
-              })
-              .on("/contact", () => {
-                contactComponent.style.display = "block"
-                //render("Login");
-              })
-              .resolve();
+                recipeTableComponent.style.display = "none"
+                recipeComponent.style.display = "none"
+                contactComponent.style.display = "none"
+            })
+            .on("/recipies", () => {
+              recipeTableComponent.style.display = "block"
+
+              recipeComponent.style.display = "none"
+              homeComponent.style.display = "none"
+              contactComponent.style.display = "none"
+            })/*
+            .on("/recipies/:id", (match) => {
+              console.log(match.data.id);
+              recipeComponent.style.display = "block"
+
+
+              recipeTableComponent.style.display = "none"
+              homeComponent.style.display = "none"
+              contactComponent.style.display = "none"
+
+            })*/
+            .on("/contact", () => {
+              contactComponent.style.display = "block"
+
+              recipeTableComponent.style.display = "none"
+              recipeComponent.style.display = "none"
+              homeComponent.style.display = "none"
+            })
+            .resolve();
         })
 
+            
 
     }
 }

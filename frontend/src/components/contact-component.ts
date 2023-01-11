@@ -1,7 +1,7 @@
 import { html, render } from "lit-html"
 
 const template = html`
-    <h1>This is a Test</h1>
+    <h1>Contact Data</h1>
 `
 
 class ContactComponent extends HTMLElement {
