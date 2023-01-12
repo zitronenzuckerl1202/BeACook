@@ -4,6 +4,8 @@ import store from "../model/store"
 import "./recipe"
 import "./contact-component"
 import "./navbar-component"
+import "./home-component"
+
 import { OVERVIEW_SELECTED, RECIPE_SELECTED_EVENT } from "./recipe"
 import produce from "immer"
 
@@ -87,9 +89,7 @@ class AppComponent extends HTMLElement {
               homeComponent.style.display = "none"
             })
             .resolve();
-        })
-
-            
+        })            
 
     }
 }
