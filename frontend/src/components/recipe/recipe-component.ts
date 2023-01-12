@@ -7,21 +7,36 @@ import store from "../../model/store"
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <h4>Ingredient List</h4>
-    <table class="w3-table-all">
-        <thead>
-            <tr>
-                <th>amount</th>
-                <th>unit</th>
-                <th>name</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <button type="button">Back to Overview</button>
+    <div id="recipeDetails"></div>
+    <div class="w3-container w3-monospace">
+        <h4>Ingredient List</h4>
+        <table class="w3-table-all">
+            <thead>
+                <tr>
+                    <th>amount</th>
+                    <th>unit</th>
+                    <th>name</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <br />
+    <button type="button" class="w3-button w3-black w3-monospace">Back to Overview</button>
         
 `
+
+const recipeInfoTemplate = (recipe: Recipe) => html`
+    <div class="w3-container w3-monospace">
+        <h1>${recipe.title}</h1>
+        <img src="${recipe.image}" class="w3-round" height="150px" alt="${recipe.title}">
+        <p>Author: ${recipe.Author}</p>
+        <p>Note: ${recipe.note}</p>
+        <h2>Preparation</h2>
+        <p>${recipe.preparation}</p>
+    </div>
+`
+
 const rowTemplate = (ingredient: Ingredient) => html`
     <td>${ingredient.amount}</td>
     <td>${ingredient.unit}</td>
@@ -43,26 +58,30 @@ class RecipeComponent extends HTMLElement{
                 const currentrecipe = model.recipes.find(recipe => recipe.id == model.currentrecipeid)
 
                 if(currentrecipe){
-
-                    this.render(currentrecipe.ingredients)
+                    this.render(currentrecipe)
                     this.style.display = "block"
                 }
                 else{
-
                     this.style.display = "none"
                 }
             })
 
     }
-    public render(ingredients: Array<Ingredient>) {
 
+    public render(recipe: Recipe) {
         render(tableTemplate, this.shadowRoot)
 
+        const recipeDetails = this.shadowRoot.getElementById("recipeDetails")
+        
+        var frag: DocumentFragment = new DocumentFragment
+        render(recipeInfoTemplate(recipe), frag)
+        recipeDetails.appendChild(frag)
+
         const tbody = this.shadowRoot.querySelector("tbody")
-        while(tbody.firstChild){
+        while (tbody.firstChild) {
             tbody.firstChild.remove()
         }
-        ingredients.forEach(ingredient =>{
+        recipe.ingredients.forEach(ingredient => {
 
             const row = tbody.insertRow()
             render(rowTemplate(ingredient), row)

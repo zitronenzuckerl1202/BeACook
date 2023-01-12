@@ -8,15 +8,14 @@ import { distinctUntilChanged, map } from "rxjs"
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <table class="w3-table-all">
     <h3>Recipe Table<h3>
     <table class="w3-table-all w3-monospace">
         <thead>
             <tr>
                 <th>id</th>
-                <th>title</th>
-                <th>Author</th>
                 <th>image</th>
+                <th>title</th>
+                <th>author</th>
                 <th>note</th>
             </tr>
         </thead>
@@ -25,9 +24,9 @@ const tableTemplate = html`
 `
 const rowTemplate = (recipe: Recipe) => html`
     <td>${recipe.id}</td>
+    <td><img src="${recipe.image}" class="w3-round" height="150px" alt="${recipe.title}"> </td>
     <td>${recipe.title}</td>
     <td>${recipe.Author}</td>
-    <td>${recipe.image}</td>
     <td>${recipe.note}</td>
 `
 class RecipeTableComponent extends HTMLElement{
