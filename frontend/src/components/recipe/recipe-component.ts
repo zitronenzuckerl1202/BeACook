@@ -75,6 +75,7 @@ class RecipeComponent extends HTMLElement{
         
         var frag: DocumentFragment = new DocumentFragment
         render(recipeInfoTemplate(recipe), frag)
+        
         recipeDetails.appendChild(frag)
 
         const tbody = this.shadowRoot.querySelector("tbody")

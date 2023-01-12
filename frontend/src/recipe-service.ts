@@ -12,6 +12,7 @@ class RecipeService{
         })
         store.next(nextState)
     }
+
 }
 
 const recipeService = new RecipeService()
