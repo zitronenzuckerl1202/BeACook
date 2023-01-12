@@ -75,7 +75,18 @@ class RecipeComponent extends HTMLElement{
         
         var frag: DocumentFragment = new DocumentFragment
         render(recipeInfoTemplate(recipe), frag)
-        recipeDetails.appendChild(frag)
+ 
+        if(recipeDetails.childElementCount == 0){
+
+            recipeDetails.appendChild(frag)
+            console.log(recipeDetails.childElementCount)
+            console.log("append")
+        }
+        else{
+
+            recipeDetails.replaceChildren(frag, recipeDetails.firstChild)
+            console.log("replace")
+        }
 
         const tbody = this.shadowRoot.querySelector("tbody")
         while (tbody.firstChild) {
