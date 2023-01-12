@@ -2,11 +2,10 @@ import {html, render} from "lit-html"
 
 const tableTemplate = html`
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../homepageStyle.css">
+    <link rel="stylesheet" href="style.css">
    </head>
 <body>
   <nav>
