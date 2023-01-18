@@ -11,7 +11,7 @@ const linkTemplate = (link: [string, string]) => html`
     <a href="${link[0]}" class="w3-bar-item w3-button w3-mobile" data-navigo>${link[1]}</a>
 `
 
-const navLinks: [string, string][] = [["/", "home"], ["/recipies", "recipe list"], ["/contact", "contact"]]
+const navLinks: [string, string][] = [["/", "home"], ["/recipies", "recipe list"], ["/contact", "contact"], ["/add-recipe", "Add Recipe"]]
 
 class NavBarComponent extends HTMLElement {
     constructor() {
